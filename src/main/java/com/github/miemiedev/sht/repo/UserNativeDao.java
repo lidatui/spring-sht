@@ -21,8 +21,9 @@ public class UserNativeDao  {
     private EntityManager entityManager;
 
     public List findAll(){
+        //List list = entityManager.createNamedQuery("findAll").setFirstResult(3).setMaxResults(10).getResultList();
         Session session = ((Session)entityManager.getDelegate());
-        List list = session.getNamedQuery("findAll").setResultTransformer(Transformers.ALIAS_TO_ENTITY_MAP).list();
+        List list = session.getNamedQuery("findAll").setFirstResult(3).setMaxResults(10).setResultTransformer(Transformers.ALIAS_TO_ENTITY_MAP).list();
         return  list;
     }
 }
