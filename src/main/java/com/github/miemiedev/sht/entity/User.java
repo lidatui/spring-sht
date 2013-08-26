@@ -2,6 +2,7 @@ package com.github.miemiedev.sht.entity;
 
 
 import javax.persistence.Entity;
+import javax.persistence.NamedNativeQuery;
 import javax.persistence.Table;
 
 @Entity

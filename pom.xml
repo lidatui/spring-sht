@@ -7,7 +7,26 @@
     <groupId>com.github.miemiedev</groupId>
     <artifactId>spring-sht</artifactId>
     <version>1.0-SNAPSHOT</version>
-
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+    <build>
+        <resources>
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*.properties</include>
+                    <include>**/*.xml</include>
+                </includes>
+            </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+                <includes>
+                    <include>**/*.*</include>
+                </includes>
+            </resource>
+        </resources>
+    </build>
     <dependencies>
         <dependency>
             <groupId>javax.servlet</groupId>

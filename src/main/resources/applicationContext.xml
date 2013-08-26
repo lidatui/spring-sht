@@ -25,6 +25,7 @@
 		<property name="dataSource" ref="dataSource"/>
 		<property name="jpaVendorAdapter" ref="hibernateJpaVendorAdapter"/>
 		<property name="packagesToScan" value="com.github.miemiedev.sht"/>
+        <property name="mappingResources" value="com/github/miemiedev/sht/repo/User.hbm.xml"/>
 		<property name="jpaProperties">
 			<props>
 				<prop key="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.EhCacheRegionFactory</prop>
