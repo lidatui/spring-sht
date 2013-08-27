@@ -29,8 +29,8 @@ public class UserController {
         //return userDao.findAll(QUser.user.name.like("%王%"), new PageRequest(0, 20));
         //return userDao.findByNameLike("%王%",new PageRequest(0, 20));
         Pageable pageable = new PageRequest(0, 20);
-        return userDao.findNativeNameLike("%王%",new PageRequest(0, 20));
-//        BigInteger count = userDao.countNativeNameLike("%王%");
-//        return new PageImpl(list, pageable, count.intValue());
+        List list = userDao.findNativeNameLike("%王%",new PageRequest(0, 20));
+        Number count = userDao.countNativeNameLike("%王%");
+        return new PageImpl(list, pageable, count.intValue());
     }
 }
