@@ -5,14 +5,11 @@
                  version="2.0">
     <package>com.github.miemiedev.sht.entity</package>
 
-    <named-query name="User.findLikeName">
-        <query>select u from User u where u.name like ?1</query>
-    </named-query>
 
-    <named-native-query name="User.findNativeLikeName" result-class="com.github.miemiedev.sht.entity.User">
+    <named-native-query name="User.findNativeNameLike" result-class="com.github.miemiedev.sht.entity.User">
         <query>select * from users u where u.name like ?1</query>
     </named-native-query>
-    <named-native-query name="User.countNativeLikeName">
+    <named-native-query name="User.countNativeNameLike">
         <query>select count(1) from users u where u.name like ?1</query>
     </named-native-query>
 

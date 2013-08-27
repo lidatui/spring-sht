@@ -27,10 +27,10 @@ public class UserController {
     @ResponseBody
     public Object user() {
         //return userDao.findAll(QUser.user.name.like("%王%"), new PageRequest(0, 20));
-       // return userDao.findLikeName("%王%",new PageRequest(0, 20));
+        //return userDao.findByNameLike("%王%",new PageRequest(0, 20));
         Pageable pageable = new PageRequest(0, 20);
-        List list = userDao.findNativeLikeName("%王%",new PageRequest(0, 20));
-        BigInteger count = userDao.countLikeName("%王%");
-        return new PageImpl(list, pageable, count.intValue());
+        return userDao.findNativeNameLike("%王%",new PageRequest(0, 20));
+//        BigInteger count = userDao.countNativeNameLike("%王%");
+//        return new PageImpl(list, pageable, count.intValue());
     }
 }

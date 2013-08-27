@@ -15,14 +15,13 @@ public interface UserDao extends JpaRepository<User, Long>,QueryDslPredicateExec
 
     User getByName(String name);
 
-    Page findLikeName(String name, Pageable pageable);
-    @Query(
-        value = "select count(1) from users u where u.name like ?1" ,
-        nativeQuery = true
-    )
-    BigInteger countLikeName(String name);
+    Page findByNameLike(String name, Pageable pageable);
 
+    //countBy要1.4才有这个功能
+    @Query(value = "select count(1) from users u where u.name like ?1", nativeQuery = true)
+    BigInteger countByNameLike(String name);
 
-    List findNativeLikeName(String name, Pageable pageable);
-    BigInteger countNativeLikeName(String name);
+    //原生SQL没法把返回结果换成Page，换成Page后当前版本会把原生SQL当成JPQL,所以转换的Count SQL就变成了Count JPQL了
+    Page findNativeNameLike(String name, Pageable pageable);
+    BigInteger countNativeNameLike(String name);
 }
