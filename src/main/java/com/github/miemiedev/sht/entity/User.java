@@ -2,7 +2,6 @@ package com.github.miemiedev.sht.entity;
 
 
 import javax.persistence.Entity;
-import javax.persistence.NamedNativeQuery;
 import javax.persistence.Table;
 
 @Entity
@@ -34,5 +33,14 @@ public class User extends IdEntity {
 
     public void setIp(String ip) {
         this.ip = ip;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "name='" + name + '\'' +
+                ", rtx='" + rtx + '\'' +
+                ", ip='" + ip + '\'' +
+                '}';
     }
 }

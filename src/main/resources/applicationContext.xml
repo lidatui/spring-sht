@@ -25,6 +25,14 @@
 		<property name="dataSource" ref="dataSource"/>
 		<property name="jpaVendorAdapter" ref="hibernateJpaVendorAdapter"/>
 		<property name="packagesToScan" value="com.github.miemiedev.sht"/>
+        <!-- <property name="persistenceUnitPostProcessors">
+           <list>
+               <bean class="org.springframework.data.jpa.support.ClasspathScanningPersistenceUnitPostProcessor">
+                   <constructor-arg value="com.github.miemiedev.sht.repo." />
+                   <property name="mappingFileNamePattern" value="*.hbm.xml" />
+               </bean>
+           </list>
+        </property>  -->
         <property name="mappingResources" value="com/github/miemiedev/sht/repo/User.hbm.xml"/>
 		<property name="jpaProperties">
 			<props>

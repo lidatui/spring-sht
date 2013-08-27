@@ -36,7 +36,7 @@
 
     <logger name="org.hibernate.SQL" level="DEBUG"/>
     <logger name="org.hibernate.type" level="DEBUG"/>
-
+    <logger name="org.springframework.data" level="DEBUG"/>
     <!--log4jdbc -->
     <!-- <logger name="jdbc.sqltiming" level="INFO"/> -->
 
