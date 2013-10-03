@@ -16,10 +16,10 @@ public interface UserDao extends JpaRepository<User, Long>,QueryDslPredicateExec
     User getByName(String name);
 
     Page findByNameLike(String name, Pageable pageable);
-
+    List findByNameLike(String name);
 
     //为什么原生SQL返回的事BigInteger，而JPQL返回的是Long?
-    @Query(value = "select count(1) from users u where u.name like ?1", nativeQuery = true)
+    //@Query(value = "select count(1) from users u where u.name like ?1", nativeQuery = true)
     //countBy要1.4才有这个功能
     Number countByNameLike(String name);
 
